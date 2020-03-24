@@ -1,13 +1,15 @@
 
 function getURL(symbol){
-  return "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol="+symbol+"&apikey=SFKFZS7WC5EHFFE8"
+  // https://sandbox.iexapis.com/stable/stock/market/batch?symbols=aapl,fb&types=quote&token=Tpk_25c2d508abf344e88c4cad95e16d76d9
+  return "https://sandbox.iexapis.com/stable/stock/market/batch?symbols="+symbol+"&types=quote&token=Tpk_25c2d508abf344e88c4cad95e16d76d9";
 }
 
-function Get(yourUrl){
-  var Httpreq = new XMLHttpRequest();
-  Httpreq.open("GET",yourUrl,false);
-  Httpreq.send(null);
-  return Httpreq.responseText;          
+async function fetchAsync (url,key,value) {
+  let response = await fetch(url);
+  let data = await response.json()
+  .then(data =>{
+      createPortfolioTable(key,value,data);
+  })
 }
 
 
