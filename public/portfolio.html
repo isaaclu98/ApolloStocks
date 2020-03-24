@@ -19,12 +19,16 @@
         
         <h4 id = "currentBalance">Balance:</h4>
 
-        <form  onsubmit="return onClickSubmit();">
+        <form id="myForm" onSubmit="return validateForm();">
             <label for="tickers">Tickers:</label>
-            <input type="text" id="stockNames"><br><br>
+            <input type="text" name="tickers" id="tickers" 
+                  style="text-transform:uppercase" 
+                  pattern="[A-Za-z]" 
+                  title="Must contains letters" required><br><br>
             <label for="quantity">Quantity:</label>
-            <input type="numbers" id="quantities"><br><br>
-            <!-- <button type="button" onclick="onClickSubmit();">Submit</button> -->
+            <input type="numbers" name="quantity" id="quantity" 
+                   pattern="\d*"
+                   title="Must be a whole number" required><br><br>
             <input type="submit" value="Buy">
         </form>
 
@@ -35,7 +39,7 @@
             <tr>
               <td>Stocks</td>
               <td>Quantity</td>
-              <td>Bought Price</td>
+              <td>Current Price</td>
             </tr>
           </table>
 

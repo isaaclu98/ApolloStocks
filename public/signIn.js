@@ -1,3 +1,4 @@
+//Global Variables
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 const auth = firebase.auth();
 var db = firebase.firestore();
@@ -6,6 +7,7 @@ var email;
 var userId;
 var abcBalance;
 
+//Checks if the user is authorized
     var uiConfig = {
         callbacks: {
           signInSuccessWithAuthResult: function(authResult, redirectUrl) {
@@ -22,16 +24,23 @@ var abcBalance;
                       userId = user.uid;
                       var docRef = db.collection("users").doc(userId);
                         docRef.get().then(function(doc) {
+                          //If user has data in the database proceed to next page
                             if (doc.exists) {
                                 console.log("Document data:", userId);
                                 abcBalance = doc.data().balance
-                            } else {
+                                window.location = "portfolio.html";
+                            } 
+                            //If user has no data; insert user into database 
+                            else {
                                 // doc.data() will be undefined in this case
                                 db.collection("users").doc(userId).set({
                                   name:name,
                                   email:email,
                                   balance:5000,
-                                  stocks:[]
+                                  stocks:{},
+                                  transactions:{}
+                                }).then(() => {
+                                  window.location = "index.html";
                                 });
                             }
                         }).catch(function(error) {
@@ -45,17 +54,16 @@ var abcBalance;
                   // No user is signed in.
               }
           });
-            return true;
+            return false;
           },
         },
         // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
         credentialHelper: firebaseui.auth.CredentialHelper.NONE,
-        signInSuccessUrl: "portfolio.html",
         signInOptions: [
           // Leave the lines as is for the providers you want to offer your users.
           firebase.auth.EmailAuthProvider.PROVIDER_ID
         ],
     };
-
+  //Fires up the FireBaseUI
   ui.start('#firebaseui-auth-container', uiConfig);
   
