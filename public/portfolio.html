@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            table, td {
+              border: 1px solid black;
+            }
+            </style>
+        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    </head>
+    <body>
+        <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-firestore.js"></script>
+        
+        
+        <h4 id = "currentBalance">Balance:</h4>
+
+        <form  onsubmit="return onClickSubmit();">
+            <label for="tickers">Tickers:</label>
+            <input type="text" id="stockNames"><br><br>
+            <label for="quantity">Quantity:</label>
+            <input type="numbers" id="quantities"><br><br>
+            <!-- <button type="button" onclick="onClickSubmit();">Submit</button> -->
+            <input type="submit" value="Buy">
+        </form>
+
+        <br> 
+
+        <h3 id = "totalPortfolio">Portfolio($5000)</h3>
+          <table id="myTable">
+            <tr>
+              <td>Stocks</td>
+              <td>Quantity</td>
+              <td>Bought Price</td>
+            </tr>
+          </table>
+
+        <script src = "variables.js"></script>
+        <script src = "alphaVantage.js"></script>
+        <script src = "portfolio.js"></script>
+    </body>
+</html>
