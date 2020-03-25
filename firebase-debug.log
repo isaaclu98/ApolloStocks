@@ -1,34 +1,38 @@
-[debug] [2020-03-24T04:42:45.297Z] ----------------------------------------------------------------------
-[debug] [2020-03-24T04:42:45.298Z] Command:       /usr/local/Cellar/node/12.8.0/bin/node /usr/local/bin/firebase serve
-[debug] [2020-03-24T04:42:45.299Z] CLI Version:   6.12.0
-[debug] [2020-03-24T04:42:45.299Z] Platform:      darwin
-[debug] [2020-03-24T04:42:45.299Z] Node Version:  v12.8.0
-[debug] [2020-03-24T04:42:45.300Z] Time:          Tue Mar 24 2020 00:42:45 GMT-0400 (Eastern Daylight Time)
-[debug] [2020-03-24T04:42:45.300Z] ----------------------------------------------------------------------
+[debug] [2020-03-25T02:11:57.719Z] ----------------------------------------------------------------------
+[debug] [2020-03-25T02:11:57.722Z] Command:       /usr/local/Cellar/node/12.8.0/bin/node /usr/local/bin/firebase serve
+[debug] [2020-03-25T02:11:57.722Z] CLI Version:   6.12.0
+[debug] [2020-03-25T02:11:57.722Z] Platform:      darwin
+[debug] [2020-03-25T02:11:57.722Z] Node Version:  v12.8.0
+[debug] [2020-03-25T02:11:57.723Z] Time:          Tue Mar 24 2020 22:11:57 GMT-0400 (Eastern Daylight Time)
+[debug] [2020-03-25T02:11:57.723Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2020-03-24T04:42:45.306Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2020-03-24T04:42:45.306Z] > authorizing via signed-in user
-[debug] [2020-03-24T04:42:45.307Z] [iam] checking project apollostocks-fd74f for permissions ["firebase.projects.get"]
-[debug] [2020-03-24T04:42:45.308Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/apollostocks-fd74f:testIamPermissions  
+[debug] [2020-03-25T02:11:57.737Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-03-25T02:11:57.737Z] > authorizing via signed-in user
+[debug] [2020-03-25T02:11:57.737Z] [iam] checking project apollostocks-fd74f for permissions ["firebase.projects.get"]
+[debug] [2020-03-25T02:11:57.739Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-03-25T02:11:57.740Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-03-25T02:11:58.015Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-25T02:11:58.031Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/apollostocks-fd74f:testIamPermissions  
 
-[debug] [2020-03-24T04:42:45.667Z] <<< HTTP RESPONSE 200
-[debug] [2020-03-24T04:42:45.670Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/apollostocks-fd74f  
+[debug] [2020-03-25T02:11:58.453Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-25T02:11:58.455Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/apollostocks-fd74f  
  
-[debug] [2020-03-24T04:42:45.888Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-25T02:11:58.958Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from '/Users/isaaclu/Desktop/github/ApolloStocks'...
 [info] 
 [warn] ⚠  Your requested "node" version "8" doesn't match your global version "12"
-[debug] [2020-03-24T04:42:45.902Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/955778079326/clients/_:getWebAppConfig  
+[debug] [2020-03-25T02:11:58.975Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/955778079326/clients/_:getWebAppConfig  
  
-[debug] [2020-03-24T04:42:45.903Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/955778079326:getServerAppConfig  
+[debug] [2020-03-25T02:11:58.976Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/955778079326:getServerAppConfig  
  
-[debug] [2020-03-24T04:42:46.221Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-25T02:11:59.641Z] <<< HTTP RESPONSE 200
 [info] ✔  functions: Emulator started at http://localhost:5001
-[debug] [2020-03-24T04:42:46.352Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-25T02:11:59.810Z] <<< HTTP RESPONSE 200
 [info] i  functions: Watching "/Users/isaaclu/Desktop/github/ApolloStocks/functions" for Cloud Functions...
 [info] i  hosting: Serving hosting files from: public
 [info] ✔  hosting: Local server: http://localhost:5000
-[debug] [2020-03-24T04:42:46.593Z] Functions runtime initialized.
-[debug] [2020-03-24T04:42:46.593Z] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
-[debug] [2020-03-24T04:42:47.022Z] firebase-admin has been stubbed.
+[debug] [2020-03-25T02:12:00.054Z] Functions runtime initialized.
+[debug] [2020-03-25T02:12:00.054Z] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
+[debug] [2020-03-25T02:12:00.532Z] firebase-admin has been stubbed.

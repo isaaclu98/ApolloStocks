@@ -5,7 +5,6 @@ var db = firebase.firestore();
 var name;
 var email;
 var userId;
-var abcBalance;
 
 //Checks if the user is authorized
     var uiConfig = {
@@ -27,7 +26,6 @@ var abcBalance;
                           //If user has data in the database proceed to next page
                             if (doc.exists) {
                                 console.log("Document data:", userId);
-                                abcBalance = doc.data().balance
                                 window.location = "portfolio.html";
                             } 
                             //If user has no data; insert user into database 

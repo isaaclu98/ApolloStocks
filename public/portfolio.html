@@ -5,11 +5,14 @@
             table, td {
               border: 1px solid black;
             }
-            </style>
+        </style>
+        
         <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="toastMessage.css">
         <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
     </head>
+
     <body>
         <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-analytics.js"></script>
@@ -23,7 +26,7 @@
             <label for="tickers">Tickers:</label>
             <input type="text" name="tickers" id="tickers" 
                   style="text-transform:uppercase" 
-                  pattern="[A-Z][a-z]" 
+                  pattern="[A-Za-z]+" 
                   title="Must contains letters" required><br><br>
             <label for="quantity">Quantity:</label>
             <input type="numbers" name="quantity" id="quantity" 
@@ -42,9 +45,13 @@
               <td>Current Price</td>
             </tr>
           </table>
+        
+        <div id = "snackbar">Unable to complete transaction</div>
+        
 
         <script src = "variables.js"></script>
-        <script src = "alphaVantage.js"></script>
+        <script src = "iexAPI.js"></script>
         <script src = "portfolio.js"></script>
+        <script src = "buyStocks.js"></script>
     </body>
 </html>

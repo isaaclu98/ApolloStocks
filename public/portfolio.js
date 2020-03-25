@@ -5,7 +5,9 @@ var url = "";
 var iterator = 3;
 var currentQuantity = 0;
 var currentPrice = 0;
-// Tpk_25c2d508abf344e88c4cad95e16d76d9
+var balance;
+var stocks;
+
 //Checks if it is an authorized users
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
@@ -14,10 +16,10 @@ firebase.auth().onAuthStateChanged((user) => {
       docRef.get().then(function(doc) {
           if (doc.exists) {
             document.getElementById("currentBalance").innerText = "Balance: " + String(doc.data().balance);
-            var stocks = doc.data().stocks;
-            var str1 = "";
+            stocks = doc.data().stocks;
             var stockSymbol = [];
             var stockQuantity = [];
+            balance = doc.data().balance;
 
             for(const [key, value] of Object.entries(stocks)){
                 stockSymbol.push(key);
