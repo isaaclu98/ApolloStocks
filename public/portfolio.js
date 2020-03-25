@@ -59,7 +59,7 @@ function createPortfolioTable(symbols,quantities,jsonObj){
         var cell3 = row.insertCell(2);
         var price = jsonObj[symbols[i]]["quote"]["latestPrice"];
         cell3.setAttribute("id","cell"+String(iterator));
-        cell3.innerHTML = "$"+price;
+        cell3.innerHTML = "$"+price.toFixed(2);
         totalProfits += (price).toFixed(2) * (quantities[i]).toFixed(2);
         var openPrice = jsonObj[symbols[i]]["quote"]["previousClose"];
         // console.log(typeof openPrice);
@@ -79,6 +79,14 @@ function createPortfolioTable(symbols,quantities,jsonObj){
   document.getElementById("totalPortfolio").innerText = "Portfolio($"+ String(totalProfits.toFixed(2)) +")";
 }
 
+function signOut(){
+  firebase.auth().signOut().then(function() {
+    console.log('Signed Out');
+    window.location = "index.html";
+  }, function(error) {
+    console.error('Sign Out Error', error);
+  });
+}
 
 
 
