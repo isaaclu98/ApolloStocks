@@ -36,7 +36,7 @@ var userId;
                                   email:email,
                                   balance:5000,
                                   stocks:{},
-                                  transactions:{}
+                                  transactions:[]
                                 }).then(() => {
                                   window.location = "index.html";
                                 });

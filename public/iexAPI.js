@@ -11,11 +11,11 @@ async function fetchAsync (url,key,value) {
   })
 }
 
-async function fetchTickerInfo (url,quantity,ticker) {
+async function fetchTickerInfo (url,quantity,ticker,buyOrSell) {
   let response = await fetch(url);
   let data = await response.json()
   .then(data =>{
-      enoughBalance(data,quantity,balance,ticker)
+      buyingStocks(data,quantity,balance,ticker,buyOrSell)
   })
 }
 

@@ -22,7 +22,7 @@
         
         <h4 id = "currentBalance">Balance:</h4>
 
-        <form id="myForm" onSubmit="return validateForm();">
+        <form id="myForm">
             <label for="tickers">Tickers:</label>
             <input type="text" name="tickers" id="tickers" 
                   style="text-transform:uppercase" 
@@ -32,7 +32,8 @@
             <input type="numbers" name="quantity" id="quantity" 
                    pattern="\d*"
                    title="Must be a whole number" required><br><br>
-            <input type="submit" value="Buy">
+            <input type="submit" value="Buy" onclick="return validateForm('buy')">
+            <input type="submit" value="Sell" onclick="return validateForm('sell')">
         </form>
 
         <br> 
@@ -46,9 +47,9 @@
             </tr>
           </table>
         
-        <div id = "snackbar">Unable to complete transaction</div>
-
-        <button onclick="signOut()">LogOut</button>
+        <div id = "snackbar">Unable To Complete Transaction</div>
+        <a href="transactions.html">Transaction's Page</a>
+        <button onclick="signOut()">Log Out</button>
         
 
         <script src = "variables.js"></script>
