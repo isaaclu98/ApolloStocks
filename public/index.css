@@ -1,0 +1,37 @@
+button{
+    float: right;
+    margin-right: 8px;
+}
+
+.col-sm-4{
+    padding-top: 16px;
+}
+
+.col-sm-8{
+    padding-top: 16px;
+}
+
+#buttonSub{
+    width: 50%;
+    font-size: 18px;
+    background-color:#3f51b5
+}
+
+#buyOrSell{
+    width: 50%;
+}
+
+#buttonLogOut{
+    background-color:#3f51b5;
+    font-size: 18px;
+}
+
+#currentBalance{
+    color : #3f51b5;
+}
+
+#totalPortfolio{
+    color: #3f51b5;
+}
+
+

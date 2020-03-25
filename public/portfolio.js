@@ -15,7 +15,7 @@ firebase.auth().onAuthStateChanged((user) => {
       var docRef = db.collection("users").doc(user.uid);
       docRef.get().then(function(doc) {
           if (doc.exists) {
-            document.getElementById("currentBalance").innerText = "Balance: " + String(doc.data().balance);
+            document.getElementById("currentBalance").innerText = "Balance: $" + String(doc.data().balance);
             stocks = doc.data().stocks;
             var stockSymbol = [];
             var stockQuantity = [];
@@ -41,11 +41,11 @@ firebase.auth().onAuthStateChanged((user) => {
 function createPortfolioTable(symbols,quantities,jsonObj){
       //Key Represents Ticker Symbol && Value represents Quantity
       for(var i = 0 ; i < symbols.length ; i++){
-        var table = document.getElementById("myTable");
+        var table = document.getElementById("myTable").getElementsByTagName('tbody')[0];
 
         //Instantiates Row
-        var row = table.insertRow(document.getElementById("myTable").rows.length);
-
+        var row = table.insertRow(document.getElementById("myTable").rows.length - 1);
+        row.setAttribute("class","rows");
         //Creates first column
         var cell1 = row.insertCell(0);
         cell1.innerHTML = symbols[i];

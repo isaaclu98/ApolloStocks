@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <style>
-            table, td {
-              border: 1px solid black;
-            }
-        </style>
-
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <link rel="stylesheet" href="toastMessage.css">
+        <link rel="stylesheet" href="index.css">
         <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
     </head>
 
@@ -19,39 +15,50 @@
         <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-auth.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-firestore.js"></script>
         
-        
-        <h4 id = "currentBalance">Balance:</h4>
+        <div class="row">
+          <div class="col-sm-4 text-center">
+       
+          <h3 id = "currentBalance">Balance: $</h3>
 
-        <form id="myForm">
-            <label for="tickers">Tickers:</label>
-            <input type="text" name="tickers" id="tickers" 
-                  style="text-transform:uppercase" 
-                  pattern="[A-Za-z]+" 
-                  title="Must contains letters" required><br><br>
-            <label for="quantity">Quantity:</label>
-            <input type="numbers" name="quantity" id="quantity" 
-                   pattern="\d*"
-                   title="Must be a whole number" required><br><br>
-            <input type="submit" value="Buy" onclick="return validateForm('buy')">
-            <input type="submit" value="Sell" onclick="return validateForm('sell')">
-        </form>
-
+          <form id="myForm" onsubmit="submitButton.disabled=true;return validateForm()">
+              <label for="tickers">Tickers:</label>
+              <input type="text" name="tickers" id="tickers" 
+                    style="text-transform:uppercase" 
+                    pattern="[A-Za-z]+" 
+                    title="Must contains letters" required><br><br>
+              <label for="quantity">Quantity:</label>
+              <input type="numbers" name="quantity" id="quantity" 
+              onkeypress='return event.charCode >= 48 && event.charCode <= 57'   title="Must be a whole number" required><br><br>
+              <select id="buyOrSell" name="buyOrSell">
+                    <option value="buy">Buy</option>
+                    <option value="sell">Sell</option>
+              </select>
+              <br><br>
+              <input type="submit"  id = "buttonSub" name = "submitButton" class="btn btn-primary" value="Submit">
+          </form>
+      </div>
         <br> 
 
+        <div class="col-sm-8">
         <h3 id = "totalPortfolio">Portfolio($0)</h3>
-          <table id="myTable">
-            <tr>
-              <td>Stocks</td>
-              <td>Quantity</td>
-              <td>Current Price</td>
-            </tr>
-          </table>
-        
-        <div id = "snackbar">Unable To Complete Transaction</div>
-        <a href="transactions.html">Transaction's Page</a>
-        <button onclick="signOut()">Log Out</button>
-        
+          <table class = "table table-striped" id="myTable">
+            <thead class = "thead-light">
+              <tr>
+                <th scope="col">Stocks</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Current Price</th>
+              </tr>
+            </thead>
+            <tbody>
 
+            </tbody>
+          </table>
+          
+        
+        <a id = "transactionsPage" href="transactions.html">Transaction's Page</a>
+        <button id = "buttonLogOut" class="btn btn-primary" onclick="signOut()">Log Out</button>
+        </div>
+        <div id = "snackbar">Unable To Complete Transaction</div>
         <script src = "variables.js"></script>
         <script src = "iexAPI.js"></script>
         <script src = "portfolio.js"></script>

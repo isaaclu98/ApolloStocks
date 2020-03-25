@@ -5,16 +5,28 @@ function validateForm(buyOrSell){
     var ticker = document.getElementById("tickers").value;
     var quantity = document.getElementById("quantity").value;
     var temp = getURL(ticker);
+    var userSelection = document.getElementById("buyOrSell").value;
+    console.log(userSelection);
 
     //Checks if it is a valid ticker symbol. If 404 error is found; invalid ticker
     UrlExists(temp, function(status){
         if(status == 200){
            //URL was found perform database reads/writes and api calls
-           fetchTickerInfo(temp,quantity,ticker,buyOrSell);
+           if(parseInt(quantity) == 0){
+            let y = document.getElementById("snackbar");
+            y.innerHTML = "Please enter a quantity greater than 0";
+            // Add the "show" class to DIV
+            y.className = "show";
+            document.getElementById("buttonSub").disabled = false;
+           }
+           else{
+            fetchTickerInfo(temp,quantity,ticker,userSelection);
+           }
         }
         else if(status == 404){
            // 404 not found and outputs an error message
-            var y = document.getElementById("snackbar");
+            document.getElementById("buttonSub").disabled = false;
+            let y = document.getElementById("snackbar");
             y.innerHTML = "Please Input A Valid Ticker Symbol";
             // Add the "show" class to DIV
             y.className = "show";
@@ -38,6 +50,7 @@ function buyingStocks(jsonObj, quantityParam, balanceParam,tickerParam,buyOrSell
                     var latestPrice = (jsonObj[tickerParam]["quote"]["latestPrice"]);
                     var totalCost = latestPrice * parseInt(quantityParam);
                     var transactions = doc.data().transactions;
+                    var date = new Date();
                     
                     //Checks if the user is buying stock shares
                     if(buyOrSell == "buy"){
@@ -47,7 +60,8 @@ function buyingStocks(jsonObj, quantityParam, balanceParam,tickerParam,buyOrSell
                             x.innerHTML = "Unable to complete transaction for insufficient balance";
                             // Add the "show" class to DIV
                             x.className = "show";
-                    
+                            document.getElementById("buttonSub").disabled = false;
+
                             // After 3 seconds, remove the show class from DIV
                             setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
                         }
@@ -66,6 +80,7 @@ function buyingStocks(jsonObj, quantityParam, balanceParam,tickerParam,buyOrSell
                             transactions.push(tickerParam);
                             transactions.push(quantityParam);
                             transactions.push(latestPrice);
+                            transactions.push(date.toLocaleString());
                     
                             //Modifies the users' account balance
                             balanceParam -= totalCost;
@@ -97,7 +112,8 @@ function buyingStocks(jsonObj, quantityParam, balanceParam,tickerParam,buyOrSell
                             x.innerHTML = "Portfolio Does Not Contain The Number Of Stock Shares";
                             // Add the "show" class to DIV
                             x.className = "show";
-                    
+                            document.getElementById("buttonSub").disabled = false;
+
                             // After 3 seconds, remove the show class from DIV
                             setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
                         }
@@ -111,7 +127,7 @@ function buyingStocks(jsonObj, quantityParam, balanceParam,tickerParam,buyOrSell
                             transactions.push(tickerParam);
                             transactions.push(quantityParam);
                             transactions.push(latestPrice);
-
+                            transactions.push(date.toLocaleString());
 
                             //Modifies the users' account balance
                             balanceParam = parseInt(balanceParam) + totalCost;

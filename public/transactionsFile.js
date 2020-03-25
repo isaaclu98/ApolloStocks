@@ -11,17 +11,21 @@ firebase.auth().onAuthStateChanged((user) => {
                 var transactionsHistory= doc.data().transactions
                 var transactions = "";
                 for(var i = 0 ; i < transactionsHistory.length ; i++){
-                    if(i % 4 == 0){
-                        transactions += transactionsHistory[i];
+                    if(i % 5 == 0){
+                        var upperCase = transactionsHistory[i].toUpperCase();
+                        transactions += upperCase;
                     }
-                    else if(i % 4 == 1){
+                    else if(i % 5 == 1){
                         transactions += " (" + String(transactionsHistory[i]) +") "
                     }
-                    else if(i % 4 == 2){
+                    else if(i % 5 == 2){
                         transactions += "- " + String(transactionsHistory[i]) +" Shares"
                     }
+                    else if(i % 5 == 3){
+                        transactions += " @ $"+String(transactionsHistory[i]);
+                    }
                     else{
-                         transactions += "@ $"+String(transactionsHistory[i]);
+                        transactions += " on " + transactionsHistory[i];
                         var row = table.insertRow(0);
                         var cell1 = row.insertCell(0);
                         cell1.innerHTML = transactions;
