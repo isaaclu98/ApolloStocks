@@ -47,6 +47,7 @@ function buyingStocks(jsonObj, quantityParam, balanceParam,tickerParam,buyOrSell
             var docRef = db.collection("users").doc(userId);
             docRef.get().then(function(doc) {
                 if (doc.exists) {
+                    tickerParam = tickerParam.toUpperCase();
                     var latestPrice = (jsonObj[tickerParam]["quote"]["latestPrice"]);
                     var totalCost = latestPrice * parseInt(quantityParam);
                     var transactions = doc.data().transactions;

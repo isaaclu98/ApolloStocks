@@ -1,39 +1,39 @@
-[debug] [2020-03-25T16:12:47.576Z] ----------------------------------------------------------------------
-[debug] [2020-03-25T16:12:47.578Z] Command:       /usr/local/Cellar/node/12.8.0/bin/node /usr/local/bin/firebase serve
-[debug] [2020-03-25T16:12:47.578Z] CLI Version:   7.16.1
-[debug] [2020-03-25T16:12:47.578Z] Platform:      darwin
-[debug] [2020-03-25T16:12:47.578Z] Node Version:  v12.8.0
-[debug] [2020-03-25T16:12:47.579Z] Time:          Wed Mar 25 2020 12:12:47 GMT-0400 (Eastern Daylight Time)
-[debug] [2020-03-25T16:12:47.579Z] ----------------------------------------------------------------------
-[debug] [2020-03-25T16:12:47.579Z] 
-[debug] [2020-03-25T16:12:47.585Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2020-03-25T16:12:47.585Z] > authorizing via signed-in user
-[debug] [2020-03-25T16:12:47.585Z] [iam] checking project apollostocks-fd74f for permissions ["firebase.projects.get"]
-[debug] [2020-03-25T16:12:47.587Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/apollostocks-fd74f:testIamPermissions  
+[debug] [2020-03-25T22:58:42.863Z] ----------------------------------------------------------------------
+[debug] [2020-03-25T22:58:42.865Z] Command:       /usr/local/Cellar/node/12.8.0/bin/node /usr/local/bin/firebase serve
+[debug] [2020-03-25T22:58:42.865Z] CLI Version:   7.16.1
+[debug] [2020-03-25T22:58:42.865Z] Platform:      darwin
+[debug] [2020-03-25T22:58:42.865Z] Node Version:  v12.8.0
+[debug] [2020-03-25T22:58:42.866Z] Time:          Wed Mar 25 2020 18:58:42 GMT-0400 (Eastern Daylight Time)
+[debug] [2020-03-25T22:58:42.866Z] ----------------------------------------------------------------------
+[debug] [2020-03-25T22:58:42.866Z] 
+[debug] [2020-03-25T22:58:42.872Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-03-25T22:58:42.872Z] > authorizing via signed-in user
+[debug] [2020-03-25T22:58:42.872Z] [iam] checking project apollostocks-fd74f for permissions ["firebase.projects.get"]
+[debug] [2020-03-25T22:58:42.874Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/apollostocks-fd74f:testIamPermissions  
 
-[debug] [2020-03-25T16:12:47.905Z] <<< HTTP RESPONSE 200
-[debug] [2020-03-25T16:12:47.909Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/apollostocks-fd74f  
+[debug] [2020-03-25T22:58:43.377Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-25T22:58:43.380Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/apollostocks-fd74f  
  
-[debug] [2020-03-25T16:12:49.202Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-25T22:58:43.682Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from '/Users/isaaclu/Desktop/github/ApolloStocks'...
 [info] 
-[debug] [2020-03-25T16:12:49.214Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/apollostocks-fd74f/webApps/-/config  
+[debug] [2020-03-25T22:58:43.692Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/apollostocks-fd74f/webApps/-/config  
  
 [warn] ⚠  Your requested "node" version "8" doesn't match your global version "12"
 [info] ✔  functions: functions emulator started at http://localhost:5001
-[debug] [2020-03-25T16:12:49.673Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-25T22:58:44.226Z] <<< HTTP RESPONSE 200
 [info] i  functions: Watching "/Users/isaaclu/Desktop/github/ApolloStocks/functions" for Cloud Functions...
-[debug] [2020-03-25T16:12:49.711Z] [worker-pool] addWorker(~diagnostic~)
-[debug] [2020-03-25T16:12:49.711Z] [worker-pool] Adding worker with key ~diagnostic~, total=1
-[debug] [2020-03-25T16:12:49.712Z] [worker-pool] submitWork(triggerId=)
-[debug] [2020-03-25T16:12:49.712Z] [worker-~diagnostic~-edde93fb-9f70-4935-a41b-dfc757a9fad3]: Assigning socketPath: /var/folders/zd/bpqrrf59625_08zv6lx1q7hw0000gn/T/fire_emu_17773.sock
-[debug] [2020-03-25T16:12:49.712Z] [worker-~diagnostic~-edde93fb-9f70-4935-a41b-dfc757a9fad3]: BUSY
+[debug] [2020-03-25T22:58:44.277Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-03-25T22:58:44.277Z] [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2020-03-25T22:58:44.277Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-03-25T22:58:44.278Z] [worker-~diagnostic~-fee52170-2bb8-4335-b271-e0d7b14d1770]: Assigning socketPath: /var/folders/zd/bpqrrf59625_08zv6lx1q7hw0000gn/T/fire_emu_33829.sock
+[debug] [2020-03-25T22:58:44.278Z] [worker-~diagnostic~-fee52170-2bb8-4335-b271-e0d7b14d1770]: BUSY
 [info] i  hosting: Serving hosting files from: public
 [info] ✔  hosting: Local server: http://localhost:5000
-[debug] [2020-03-25T16:12:49.901Z] [runtime-status] [17773] Functions runtime initialized. {"cwd":"/Users/isaaclu/Desktop/github/ApolloStocks/functions","node_version":"12.8.0"}
-[debug] [2020-03-25T16:12:49.902Z] [runtime-status] [17773] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
-[debug] [2020-03-25T16:12:49.904Z] [runtime-status] [17773] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.10.0","resolution":"/Users/isaaclu/Desktop/github/ApolloStocks/functions/node_modules/firebase-admin/lib/index.js"}
-[debug] [2020-03-25T16:12:49.904Z] [runtime-status] [17773] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.5.0","resolution":"/Users/isaaclu/Desktop/github/ApolloStocks/functions/node_modules/firebase-functions/lib/index.js"}
-[debug] [2020-03-25T16:12:49.905Z] [runtime-status] [17773] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.5.0","resolution":"/Users/isaaclu/Desktop/github/ApolloStocks/functions/node_modules/firebase-functions/lib/index.js"}
-[debug] [2020-03-25T16:12:49.930Z] [worker-~diagnostic~-edde93fb-9f70-4935-a41b-dfc757a9fad3]: IDLE
+[debug] [2020-03-25T22:58:44.477Z] [runtime-status] [33829] Functions runtime initialized. {"cwd":"/Users/isaaclu/Desktop/github/ApolloStocks/functions","node_version":"12.8.0"}
+[debug] [2020-03-25T22:58:44.478Z] [runtime-status] [33829] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-25T22:58:44.480Z] [runtime-status] [33829] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.10.0","resolution":"/Users/isaaclu/Desktop/github/ApolloStocks/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-03-25T22:58:44.481Z] [runtime-status] [33829] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.5.0","resolution":"/Users/isaaclu/Desktop/github/ApolloStocks/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-03-25T22:58:44.481Z] [runtime-status] [33829] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.5.0","resolution":"/Users/isaaclu/Desktop/github/ApolloStocks/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-03-25T22:58:44.507Z] [worker-~diagnostic~-fee52170-2bb8-4335-b271-e0d7b14d1770]: IDLE

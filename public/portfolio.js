@@ -25,7 +25,9 @@ firebase.auth().onAuthStateChanged((user) => {
                 stockSymbol.push(key);
                 stockQuantity.push(value);
             }
-            fetchAsync(getURL(stockSymbol.join(',')),stockSymbol,stockQuantity);
+            if (stockSymbol.length != 0){ 
+              fetchAsync(getURL(stockSymbol.join(',')),stockSymbol,stockQuantity);
+            }
           } else {
               // doc.data() will be undefined in this case
               console.log("No such document!");

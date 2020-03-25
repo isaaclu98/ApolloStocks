@@ -15,7 +15,7 @@ async function fetchTickerInfo (url,quantity,ticker,buyOrSell) {
   let response = await fetch(url);
   let data = await response.json()
   .then(data =>{
-      buyingStocks(data,quantity,balance,ticker,buyOrSell)
+      buyingStocks(JSON.parse(JSON.stringify(data)),quantity,balance,ticker,buyOrSell)
   })
 }
 
