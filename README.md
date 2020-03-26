@@ -1,6 +1,6 @@
-# ApolloStocks - A Stocking Trading Web Application
+# ApolloStocks
 https://apollostocks-fd74f.firebaseapp.com/<br>
-A user will first create an account and login with the registered credentials. Afterwards, the user can start buying and selling any U.S stocks by inputting a ticker symbol and the quantity. There is a table that shows the user's stock portfolio displaying all the stocks names, the stock quantity, and the stock's current price. A transaction table tab is also an option for the user to monitor their recent tradings for auditting purposes. 
+Apollo Stocks is a stock trading weh Application which allows users to buy and sell stocks. A user will first create an account and login with the registered credentials. Afterwards, the user can start buying and selling any U.S stocks by inputting a ticker symbol and the quantity. There is a table that shows the user's stock portfolio displaying all the stocks names, the stock quantity, and the stock's current price. A transaction table tab is also an option for the user to monitor their recent tradings for auditting purposes. 
 
 <img src = "/images/LoginScreen.png"> <br>
 <img src = "/images/PortfolioScreen.png"> <br>
