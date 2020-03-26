@@ -2,6 +2,10 @@
 https://apollostocks-fd74f.firebaseapp.com/<br>
 With ApolloStocks, a user can create an account and login with the registered credentials. Afterwards a user can start buying and selling U.S stocks. There is a table that shows the user's stock portfolio, displaying all the stocks names, the stock quantity, and the stock's current price. A transaction table tab is also an option for the user to monitor their recent tradings. 
 
+<img src = "/images/LoginScreen.png"> <br>
+<img src = "/images/PortfolioScreen.png"> <br>
+<img src = "/images/TransactionScreen.png"><br>
+
 ### Prerequisites
 
 Developed with Node.js -v 12.16.1<br><br>
