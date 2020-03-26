@@ -5,7 +5,7 @@ With ApolloStocks, a user can create an account and login with the registered cr
 ### Prerequisites
 
 Developed with Node.js -v 12.16.1<br><br>
-Run command npm -v to see your node version<br><br>
+Run command npm -v to see your node version<br>
 ### Installing
 
 Run command npm install -g firebase-tools to install firebase<br><br>
